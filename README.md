@@ -1,1 +1,1 @@
-# ML_Docker_Azure_webapp
+# Showcase some basic ML skills through a Streamlit web app.
