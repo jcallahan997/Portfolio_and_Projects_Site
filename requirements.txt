@@ -1,0 +1,11 @@
+pandas
+seaborn
+streamlit
+os
+pyarrow
+random
+scikit-learn
+idendrogram
+matplotlib
+scipy
+pillow==9.0.0
