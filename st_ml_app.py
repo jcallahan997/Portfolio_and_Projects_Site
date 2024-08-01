@@ -1,5 +1,4 @@
 import os
-os.system('pip install scikit-learn')
 os.system('pip install idendrogram')
 # os.system('pip install streamlit==1.33.0')
 # from PIL import _imaging
