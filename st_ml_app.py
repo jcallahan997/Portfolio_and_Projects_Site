@@ -188,7 +188,7 @@ def rerun(car_safety):
     st.write("Clustered Data (Sample of 100)")
     st.write(heatmap_data_pred_joined.head(100))
     
-st.button('rerun')
+st.button('rerun - resample data')
     
 rerun(car_safety)   
     
