@@ -1,5 +1,3 @@
-# os.system('pip install streamlit==1.33.0')
-# from PIL import _imaging
 import numpy as np
 import idendrogram
 import streamlit as st
@@ -17,9 +15,6 @@ from scipy.cluster.hierarchy import dendrogram, linkage
 st.title('Hierarchical Clustering on Crash Data')
 st.write("Data Source: https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents/data")
 
-
-#def states():
-#    return (car_safety.select(["State"]).to_pandas(split_blocks=True, self_destruct=True))['State'].unique()
 
 state_dict = {
         'AL': 'Alabama',
@@ -83,16 +78,10 @@ st.write("State selected:", state_dict[option])
 @st.cache_data()
 def load_crash_data():
     car_safety = csv.read_csv("crash_data_prepped.csv")
-    return car_safety #.filter(pyarrow.compute.equal(car_safety['State'], option))
+    return car_safety
 
 car_safety = load_crash_data()
 
-# car_safety = car_safety_full.filter(pyarrow.compute.equal(car_safety_full['State'], option))
-
-#car_safety = load_crash_data()
-
-# car_safety = Dataset.get("car_safety").select(columns_nonculled).limit(10000).read_table(format="arrow")
-  # .where(Column.get("column_name").isin(["value1", "value2"])) # See documentation for other available filters
 
 def sample_table(table: pyarrow.Table, n_sample_rows: int = None) -> pyarrow.Table:
     if n_sample_rows is None or n_sample_rows >= table.num_rows:
@@ -147,10 +136,7 @@ def rerun(car_safety):
     # add descriptive column names
     heatmap_data_scaled_imputed = pd.DataFrame(heatmap_data_scaled, columns = (["ID"] + columns_heatmap))
 
-
     st.write(heatmap_data_scaled_imputed.head(100))
-
-
 
     # dendrogram time
     st.subheader("Dendrogram")
