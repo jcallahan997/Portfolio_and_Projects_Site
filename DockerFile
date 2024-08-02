@@ -1,6 +1,6 @@
 FROM python:3.9
 ADD st_ml_app.py . 
-ADD crash_data_prepped.py . 
+ADD crash_data_prepped.csv . 
 RUN pip3 install -r requirements.txt
 EXPOSE 8501
 ENTRYPOINT ["streamlit", "run", "st_ml_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
