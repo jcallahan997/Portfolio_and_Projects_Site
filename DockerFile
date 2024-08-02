@@ -1,4 +1,5 @@
 FROM python:3.9-slim
+WORKDIR /app
 ADD st_ml_app.py . 
 ADD crash_data_prepped.csv . 
 RUN pip3 install -r requirements.txt
