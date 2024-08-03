@@ -1,9 +1,7 @@
 pandas
 seaborn
 streamlit==1.36.0
-os
 pyarrow
-random
 scikit-learn
 idendrogram
 matplotlib
