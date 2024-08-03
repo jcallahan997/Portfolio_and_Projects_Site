@@ -1,6 +1,6 @@
 pandas
 seaborn
-streamlit==1.36.0
+streamlit
 pyarrow
 scikit-learn
 idendrogram
