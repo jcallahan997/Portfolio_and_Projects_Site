@@ -1,9 +1,9 @@
 FROM --platform=linux/amd64 python:3.10-slim
 WORKDIR /app
-ADD st_ml_app.py . 
+ADD Callahan_Agglomerative-Clustering_App.py.py . 
 ADD crash_data_prepped.csv .
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
-EXPOSE 80
-HEALTHCHECK CMD curl --fail http://localhost:80/_stcore/health
-ENTRYPOINT ["streamlit", "run", "st_ml_app.py", "--server.port=80", "--server.address=0.0.0.0"]
+EXPOSE 8501
+HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
+ENTRYPOINT ["streamlit", "run", "Callahan_Agglomerative-Clustering_App.py", "--server.port=8501", "--server.address=0.0.0.0"]
