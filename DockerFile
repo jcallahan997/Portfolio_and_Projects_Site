@@ -2,7 +2,8 @@ FROM --platform=linux/amd64 python:3.10-slim
 WORKDIR /app
 ADD Callahan_Portfolio.py . 
 ADD crash_data_prepped.csv .
-ADD pages . 
+ADD pages/1_Project:_Agglomerative_Clustering_App.py . 
+ADD pages/2_Project:_Rshiny_App_Car_Prices.py . 
 ADD IMG_5550.jpeg . 
 ADD Callahan_resume_07_2024_consulting.pdf . 
 ADD Callahan_resume_07_2024_consulting.docx .
