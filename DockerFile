@@ -3,6 +3,9 @@ WORKDIR /app
 ADD Callahan_Portfolio.py . 
 ADD crash_data_prepped.csv .
 ADD pages . 
+ADD IMG_5550.jpeg . 
+ADD Callahan_resume_07_2024_consulting.pdf . 
+ADD Callahan_resume_07_2024_consulting.docx .
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 EXPOSE 8501
