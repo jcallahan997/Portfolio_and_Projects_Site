@@ -10,7 +10,7 @@ st.image("IMG_5550.jpeg", caption="A picture of me on a recent trip I took with 
 pdf_viewer("Callahan_resume_07_2024_consulting.pdf")
 
 with open('Callahan_resume_07_2024_consulting.docx', 'rb') as f:
-   st.download_button('Download as docx', f, file_name='Callahan_James_Resume.docx')
+   st.download_button('Download resume as .docx', f, file_name='Callahan_James_Resume.docx')
 
 st.write("Check out my GitHub: https://github.com/jcallahan997")
 st.write("Thank you for visiting my page!")
