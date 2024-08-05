@@ -74,6 +74,13 @@ option = st.selectbox(
 
 st.write("State selected:", state_dict[option])
 
+sample_size = [500, 1000, 2500, 5000, 7500, 10000]
+
+option_sample_size = st.selectbox(
+   "Sample Size",
+   (sample_size)
+)
+
 
 @st.cache_data()
 def load_crash_data():
@@ -91,7 +98,7 @@ def sample_table(table: pyarrow.Table, n_sample_rows: int = None) -> pyarrow.Tab
 
     return table.take(indices)
 
-car_safety = sample_table(car_safety.filter(pyarrow.compute.equal(car_safety['State'], option)), 10_000)
+car_safety = sample_table(car_safety.filter(pyarrow.compute.equal(car_safety['State'], option)), option_sample_size)
 
 def rerun(car_safety): 
 
@@ -142,10 +149,13 @@ def rerun(car_safety):
     st.subheader("Dendrogram")
     st.write("Created using hierarchical clustering")
 
+    distance_hyperparameter = st.slider("Distance Threshhold", 0, 100, 50)
+
+
     X = heatmap_data_scaled_imputed[columns_heatmap]
 
     # setting distance_threshold=0 ensures we compute the full tree.
-    model_a = AgglomerativeClustering(distance_threshold=65, n_clusters=None, compute_distances=True)
+    model_a = AgglomerativeClustering(distance_threshold=distance_hyperparameter, n_clusters=None, compute_distances=True)
 
     model = model_a.fit(X)
     cl = model_a.fit_predict(X)
