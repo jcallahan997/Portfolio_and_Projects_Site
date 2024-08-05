@@ -149,7 +149,7 @@ def rerun(car_safety):
     st.subheader("Dendrogram")
     st.write("Created using hierarchical clustering")
 
-    distance_hyperparameter = st.slider("Distance Threshhold", 0, 100, 50)
+    distance_hyperparameter = st.slider("Distance Threshhold", 0, 100, 20)
 
 
     X = heatmap_data_scaled_imputed[columns_heatmap]
@@ -170,17 +170,22 @@ def rerun(car_safety):
     st.write((idd.create_dendrogram().plot(
         backend='plotly',
         height=600, width=629)))
-
-    # interpreting the dendrogram
-    st.write("Interpreting the dendrogram:")
-
+    
+    latext_2 = r'''
+    ##### Note: There is no minimum cluster size set as the data seen here is processed minimally, and allowing small clusters containing outliers to form allows the rest of the clusters to retain their data integrity 
+    ### Interpreting the dendrogram:
+    ###### Cluster Averages:
+    '''
+    st.write(latext_2)
+  
     heatmap_data_scaled_imputed['Cluster'] = cl
     heatmap_data_scaled_imputed_id = heatmap_data_scaled_imputed[['ID', 'Cluster']]
     heatmap_data_pred_joined = heatmap_data_df_unscaled.merge(heatmap_data_scaled_imputed_id, on="ID", how='left')
     d1 = dict.fromkeys(columns_heatmap, 'mean')
     d1['ID']='count'
-    st.write("Cluster Averages")
+
     st.write(heatmap_data_pred_joined.groupby(['Cluster'], as_index=False).agg(d1).rename(columns={"ID":"Count"}))
+
     st.write("Clustered Data (Sample of 100)")
     st.write(heatmap_data_pred_joined.head(100))
     
