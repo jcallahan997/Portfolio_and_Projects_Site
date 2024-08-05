@@ -23,8 +23,8 @@ def sample_table(table: pyarrow.Table, n_sample_rows: int = None) -> pyarrow.Tab
 
     return table.take(indices)
 
-source_df = csv.read_csv("US_Accidents_March23.csv").select(columns_nonculled)
+source_df_large = csv.read_csv("US_Accidents_March23.csv").select(columns_nonculled)
 
-car_safety = sample_table(source_df, 500_000)
+car_safety = sample_table(source_df_large, 500_000)
 
 csv.write_csv(car_safety, "crash_data_prepped.csv")
