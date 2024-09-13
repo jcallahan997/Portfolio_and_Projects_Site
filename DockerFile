@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 python:3.10-slim
+FROM --platform=linux/amd64 python:3.10-alpine
 COPY . /app
 WORKDIR /app
 #COPY . .
@@ -10,7 +10,7 @@ WORKDIR /app
 #ADD Callahan_resume_07_2024_consulting.pdf . 
 #ADD Callahan_resume_07_2024_consulting.docx .
 COPY requirements.txt .
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt --no-cache-dir
 EXPOSE 8501
 HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
 ENTRYPOINT ["streamlit", "run", "Callahan_Portfolio.py", "--server.port=8501", "--server.address=0.0.0.0"]
