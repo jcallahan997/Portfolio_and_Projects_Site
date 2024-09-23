@@ -37,6 +37,12 @@ def create_chat_completion(endpoint, subscription_key, deployment, messages):
         stream=False
     )
 
-    print(completion.to_json())
+def handle_chat_prompt(prompt, deployment, subscription_key, endpoint):
+    # echo the user's prompt to the chat window
+    st.session_state.messages.append({"role":"user", "content":"prompt"})
+    with st.chat_message("user"):
+        st.markdown(prompt)
+
+        
 
 
