@@ -1,4 +1,5 @@
 import os
+import streamlit as st
 from openai import AzureOpenAI
 
 LLM_API_KEY = os.getenv('API_KEY')
@@ -34,3 +35,5 @@ completion = client.chat.completions.create(
 )
 
 print(completion.to_json())
+
+
