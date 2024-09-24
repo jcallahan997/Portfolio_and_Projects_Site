@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_pdf_viewer import pdf_viewer
-st.set_page_config( page_title="My Page Title", )
+st.set_page_config( page_title="Callahan Portfolio", )
 st.title("Welcome to my portfolio!")
 
 st.write("Hi, I'm James. I work as a data scientist and am passionate about the field. In my free time, I like to boulder, travel, and dance!")

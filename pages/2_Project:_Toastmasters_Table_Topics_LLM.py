@@ -1,7 +1,7 @@
 import os
 import streamlit as st
 from openai import AzureOpenAI
-
+st.set_page_config(layout="centered")
 st.header("Containerized Azure OpenAI instance of gpt-35-turbo")
 st.title("Toastmasters 'Table Topic' Questions Generator")
 st.write("Table Topics® is a long-standing Toastmasters tradition intended to \
