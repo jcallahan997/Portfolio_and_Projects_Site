@@ -6,10 +6,11 @@ st.title("Toastmasters 'Table Topic' Questions Generator")
 st.write("Table Topics® is a long-standing Toastmasters tradition intended to \
             help members develop their ability to organize their thoughts quickly and \
             respond to an impromptu question or topic")
-st.write("It is a containerized Azure OpenAI instance of gpt-35-turbo")
 
 st.write("I created this app as occassionally I do not have time to prepare 10+ creative\
           questions surrounding a particular theme to ask fellow Toastmasters during the meeting.")
+
+st.write("It is a containerized Azure OpenAI instance of gpt-35-turbo")
 
 LLM_API_KEY = os.getenv('API_KEY')
 LLM_ENDPOINT = os.getenv('endpoint')
