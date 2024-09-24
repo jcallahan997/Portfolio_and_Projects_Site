@@ -18,15 +18,13 @@ LLM_API_KEY = os.getenv('API_KEY')
 LLM_ENDPOINT = os.getenv('endpoint')
 DEPLOYMENT_NAME = os.getenv('deployment_name')
 
-endpoint = os.getenv("ENDPOINT_URL", LLM_ENDPOINT)
-deployment = os.getenv("DEPLOYMENT_NAME", DEPLOYMENT_NAME)
-subscription_key = os.getenv("AZURE_OPENAI_API_KEY", LLM_API_KEY)
+
 
 st.title("ChatGPT-like clone")
 
 client = AzureOpenAI( 
-        azure_endpoint = endpoint,
-        api_key = subscription_key,
+        azure_endpoint = LLM_ENDPOINT,
+        api_key = LLM_API_KEY,
         api_version = "2024-05-01-preview",
     )
 
