@@ -40,12 +40,10 @@ import json
 # region PROMPT SETUP
 
 default_prompt = """
-You are an AI assistant  that helps users write concise\
+You are an AI assistant that helps users write concise\
  reports on sources provided according to a user query.\
- You will provide reasoning for your summaries and deductions by\
- describing your thought process. You will highlight any conflicting\
- information between or within sources. Greet the user by asking\
- what they'd like to investigate.
+ You will give users 10 ideas for Toastmasters Table Topics.\
+ Greet the user by asking what they'd like their topic/theme to be.
 """
 
 system_prompt = st.sidebar.text_area("System Prompt", default_prompt, height=200)
@@ -106,7 +104,7 @@ def generate_response(prompt):
     st.session_state["messages"].append({"role": "user", "content": prompt})
     try:
         completion = openai.ChatCompletion.create(
-            engine=os.getenv('deployment_name'),
+            engine=DEPLOYMENT_NAME,
             messages=st.session_state["messages"],
         )
         response = completion.choices[0].message.content
@@ -140,7 +138,6 @@ with container:
         )
         st.session_state["past"].append(user_input)
         st.session_state["generated"].append(output)
-        st.session_state["model_name"].append(os.getenv('deployment_name'))
         st.session_state["total_tokens"].append(total_tokens)
 
         # from https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/#pricing
