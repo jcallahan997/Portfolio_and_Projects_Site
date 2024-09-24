@@ -4,7 +4,9 @@ from streamlit_pdf_viewer import pdf_viewer
 st.set_page_config( page_title="Callahan Portfolio", )
 st.title("Welcome to my portfolio!")
 
-st.write("Hi, I'm James. I work as a data scientist and am passionate about the field. In my free time, I like to boulder, travel, and dance!")
+st.write("Hi, I'm James. I work as a data scientist and am passionate about\
+          the field. In my free time, I like to boulder, travel, and dance! Working on cars\
+         and reading are other things that bring me joy.")
 #add pic of myself here
 st.image("IMG_5550.jpeg", caption="A picture of me on a recent trip I took with a friend to Sri Lanka.")
 # present resume and a download button for it here
