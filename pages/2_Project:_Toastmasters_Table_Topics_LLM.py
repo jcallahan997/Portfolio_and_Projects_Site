@@ -2,13 +2,11 @@ import os
 import streamlit as st
 from openai import AzureOpenAI
 
-st.header("Azure OpenAI deployment of gpt-35-turbo")
+st.header("Containerized Azure OpenAI instance of gpt-35-turbo")
 st.title("Toastmasters 'Table Topic' Questions Generator")
 st.write("Table Topics® is a long-standing Toastmasters tradition intended to \
             help members develop their ability to organize their thoughts quickly and \
             respond to an impromptu question or topic")
-
-st.write('Hierarchical Clustering on Crash Data')
 
 LLM_API_KEY = os.getenv('API_KEY')
 LLM_ENDPOINT = os.getenv('endpoint')
@@ -35,7 +33,7 @@ def create_chat_completion(endpoint, subscription_key, deployment, messages):
             "content": "You are an AI assistant that helps people find information."
         }
     ],
-        past_messages=10,
+        past_messages=2,
         max_tokens=800,
         temperature=0.7,
         top_p=0.95,
