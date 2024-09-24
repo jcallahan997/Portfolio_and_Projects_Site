@@ -1,14 +1,6 @@
 FROM --platform=linux/amd64 python:3.10-slim
 COPY . /app
 WORKDIR /app
-#COPY . .
-#ADD Callahan_Portfolio.py . 
-#ADD crash_data_prepped.csv .
-#ADD pages/1_Project:_Agglomerative_Clustering_App.py . 
-#ADD pages/2_Project:_Rshiny_App_Car_Prices.py . 
-#ADD IMG_5550.jpeg . 
-#ADD Callahan_resume_07_2024_consulting.pdf . 
-#ADD Callahan_resume_07_2024_consulting.docx .
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt --no-cache-dir
 EXPOSE 8501
