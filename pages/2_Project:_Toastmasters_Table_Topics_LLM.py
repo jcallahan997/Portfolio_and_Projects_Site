@@ -1,7 +1,6 @@
 import os
 import streamlit as st
 import openai
-from openai import AzureOpenAI
 from streamlit_chat import message
 import datetime
 import json
