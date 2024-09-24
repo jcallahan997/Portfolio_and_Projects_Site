@@ -30,7 +30,7 @@ openai.api_version = "2024-05-01-preview"
 
 
 llm = AzureOpenAI(
-    engine="'gpt-35-turbo_for_table_topics'",
+    deployment_name='gpt-35-turbo_for_table_topics',
     model_name="gpt-35-turbo", 
 )
 
