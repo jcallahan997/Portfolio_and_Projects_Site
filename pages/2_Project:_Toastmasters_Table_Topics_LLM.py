@@ -1,5 +1,6 @@
 import os
 import streamlit as st
+import openai
 from openai import AzureOpenAI
 st.set_page_config(layout="centered", page_title="Project: Toastmasters Table Topics Generator")
 st.title("Toastmasters 'Table Topic' Questions Generator")
@@ -19,12 +20,10 @@ LLM_ENDPOINT = os.getenv('endpoint')
 DEPLOYMENT_NAME = os.getenv('deployment_name')
 
 
+openai.api_type = "azure"
+openai.api_base = LLM_ENDPOINT
+openai.api_key = LLM_API_KEY
+openai.api_version = "2024-05-01-preview"
+
 
 st.title("ChatGPT-like clone")
-
-client = AzureOpenAI( 
-        azure_endpoint = LLM_ENDPOINT,
-        api_key = LLM_API_KEY,
-        api_version = "2024-05-01-preview",
-    )
-
