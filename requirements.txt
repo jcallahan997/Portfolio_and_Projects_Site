@@ -9,4 +9,4 @@ matplotlib
 scipy
 pillow==9.0.0
 streamlit-pdf-viewer
-openai
+
