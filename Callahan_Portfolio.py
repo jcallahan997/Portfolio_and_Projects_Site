@@ -9,7 +9,7 @@ st.image("IMG_5550.jpeg", caption="A picture of me on a recent trip I took with 
 
 pdf_viewer("Callahan_resume_07_2024_consulting.pdf")
 
-with open('Callahan_resume_07_2024_consulting.docx', 'rb') as f:
+with open('Callahan_James_Resume.docx', 'rb') as f:
    st.download_button('Download resume as .docx', f, file_name='Callahan_James_Resume.docx')
 
 st.write("Check out my GitHub: https://github.com/jcallahan997")
