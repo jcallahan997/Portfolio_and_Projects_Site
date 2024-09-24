@@ -11,7 +11,7 @@ from random import sample
 import pyarrow
 from pyarrow import csv
 from scipy.cluster.hierarchy import dendrogram, linkage
-st.set_page_config(layout="centered")
+st.set_page_config(layout="centered", page_title="Project: Agglomerative Clustering on Car Crashes")
 st.header("Containerized (Docker) Streamlit app running in Azure.")
 st.title('Hierarchical Clustering on Crash Data')
 st.write("Data Source: https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents/data")
