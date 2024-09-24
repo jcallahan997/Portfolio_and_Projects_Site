@@ -2,6 +2,7 @@ import os
 import streamlit as st
 import openai
 from streamlit_chat import message
+from openai import AzureOpenAI
 import datetime
 import json
 st.set_page_config(layout="centered", page_title="Project: Toastmasters Table Topics Generator")
@@ -27,6 +28,11 @@ openai.api_base = LLM_ENDPOINT
 openai.api_key = LLM_API_KEY
 openai.api_version = "2024-05-01-preview"
 
+
+llm = AzureOpenAI(
+    engine="'gpt-35-turbo_for_table_topics'",
+    model_name="gpt-35-turbo", 
+)
 
 st.title("ChatGPT-like clone")
 import streamlit as st
@@ -104,7 +110,7 @@ def generate_response(prompt):
     st.session_state["messages"].append({"role": "user", "content": prompt})
     try:
         completion = openai.ChatCompletion.create(
-            engine=DEPLOYMENT_NAME,
+            engine=llm,
             messages=st.session_state["messages"],
         )
         response = completion.choices[0].message.content
