@@ -2,6 +2,14 @@ import os
 import streamlit as st
 from openai import AzureOpenAI
 
+st.header("Azure OpenAI deployment of gpt-35-turbo")
+st.title("Toastmasters 'Table Topic' Questions Generator")
+st.write("Table Topics® is a long-standing Toastmasters tradition intended to \
+            help members develop their ability to organize their thoughts quickly and \
+            respond to an impromptu question or topic")
+
+st.write('Hierarchical Clustering on Crash Data')
+
 LLM_API_KEY = os.getenv('API_KEY')
 LLM_ENDPOINT = os.getenv('endpoint')
 DEPLOYMENT_NAME = os.getenv('deployment_name')
@@ -43,6 +51,6 @@ def handle_chat_prompt(prompt, deployment, subscription_key, endpoint):
     with st.chat_message("user"):
         st.markdown(prompt)
 
-        
+
 
 
