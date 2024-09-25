@@ -12,7 +12,7 @@ st.write("Table Topics® is a long-standing Toastmasters tradition intended to \
             respond to an impromptu question or topic.")
 
 st.write("I created this app as occassionally I do not have time to prepare 10+ creative\
-          questions surrounding a particular theme to ask fellow Toastmasters during the meeting.")
+          questions surrounding a preselected theme to ask fellow Toastmasters during the meeting.")
 
 st.write("This app is an Azure OpenAI instance of gpt-35-turbo, that is then set as a page in the larger\
          Streamlit portfolio. The portfolio is containerized with Docker and runs on an Azure cloud compute\

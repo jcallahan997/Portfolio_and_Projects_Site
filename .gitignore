@@ -2,6 +2,7 @@
 US_Accidents_March23.csv
 #supersecrets.py
 .env
+Dockerfile
  # crash_data_prepped.csv
  .DS_Store
 __pycache__/
