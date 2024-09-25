@@ -11,3 +11,4 @@ pillow==9.0.0
 streamlit-pdf-viewer
 openai
 streamlit_chat
+python-dotenv

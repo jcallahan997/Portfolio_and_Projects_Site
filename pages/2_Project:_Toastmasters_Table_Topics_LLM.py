@@ -5,6 +5,8 @@ from streamlit_chat import message
 from openai import AzureOpenAI
 import datetime
 import json
+from dotenv import load_dotenv
+load_dotenv()
 st.set_page_config(layout="centered", page_title="Project: Toastmasters Table Topics Generator")
 st.title("Toastmasters 'Table Topic' Questions Generator")
 st.write("Table Topics® is a long-standing Toastmasters tradition intended to \
