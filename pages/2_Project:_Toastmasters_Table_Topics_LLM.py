@@ -29,13 +29,13 @@ deployment_name = os.getenv('deployment_name')
 # Set OpenAI configuration settings
 openai.api_type = "azure"
 openai.api_base = endpoint
-openai.api_version = "2024-05-01-preview"
+openai.api_version = "2023-03-15-preview"
 openai.api_key = key
 
 def create_chat_completion(deployment_name, messages, endpoint, key):
     client = openai.AzureOpenAI(
         api_key=key,
-        api_version="2024-05-01-preview",
+        api_version="2023-03-15-preview",
         azure_endpoint = endpoint
     )
     # Create and return a new chat completion request
@@ -51,7 +51,7 @@ def create_chat_completion(deployment_name, messages, endpoint, key):
 def create_chat_with_data_completion(deployment_name, messages, endpoint, key):
     client = openai.AzureOpenAI(
         api_key=key,
-        api_version="2024-05-01-preview",
+        api_version="2023-03-15-preview",
         azure_endpoint=endpoint
     )
     # Create and return a new chat completion request
