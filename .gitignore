@@ -1,6 +1,7 @@
 # Byte-compiled / optimized / DLL files
 US_Accidents_March23.csv
 #supersecrets.py
+.DS_Store
 .env
 Dockerfile
  # crash_data_prepped.csv
