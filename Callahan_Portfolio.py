@@ -13,6 +13,9 @@ st.image("IMG_5550.jpeg", caption="A picture of me on a recent trip I took with 
 
 pdf_viewer("Callahan_James_Resume(v1.0).pdf")
 
+with open('Callahan_James_Resume(v1.0).pdf', 'rb') as f:
+   st.download_button('Download resume as .pdf', f, file_name='Callahan_James_Resume.pdf')
+
 with open('Callahan_James_Resume(v1.0).docx', 'rb') as f:
    st.download_button('Download resume as .docx', f, file_name='Callahan_James_Resume.docx')
 
