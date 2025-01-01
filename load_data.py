@@ -25,6 +25,6 @@ def sample_table(table: pyarrow.Table, n_sample_rows: int = None) -> pyarrow.Tab
 
 source_df_large = csv.read_csv("US_Accidents_March23.csv").select(columns_nonculled)
 
-car_safety = sample_table(source_df_large, 1_000_000)
+car_safety = sample_table(source_df_large, 100_000)
 
 csv.write_csv(car_safety, "crash_data_prepped.csv")
