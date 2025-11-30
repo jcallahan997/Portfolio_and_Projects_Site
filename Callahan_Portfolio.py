@@ -16,6 +16,6 @@ pdf_viewer("Callahan_James_Resume (v5.4) copy.pdf")
 with open('Callahan_James_Resume (v5.4) copy.pdf', 'rb') as f:
    st.download_button('Download resume as .pdf', f, file_name='Callahan_James_Resume.pdf')
 
-st.write("Check out my LinkedIn: https://www.linkedin.com/in/jamesacallahan/")
+st.write("Go to my LinkedIn: https://www.linkedin.com/in/jamesacallahan/")
 st.write("Check out my GitHub: https://github.com/jcallahan997")
 st.write("Thank you for visiting my page!")
